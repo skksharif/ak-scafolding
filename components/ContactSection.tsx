@@ -26,7 +26,7 @@ const ContactSection = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e:any) => {
+  const handleInputChange = (e: any) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -34,7 +34,7 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
 
     // Create a mailto link with subject & body
@@ -250,7 +250,7 @@ ${formData.message}`
                     id="message"
                     name="message"
                     required
-                    rows="5"
+                    rows={5} // ✅ number, no error
                     value={formData.message}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F36A2D] focus:border-transparent transition-all duration-300 resize-vertical"
