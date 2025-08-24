@@ -1,8 +1,13 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-import { FaTimes } from 'react-icons/fa';
+import { useState } from "react";
+import { useInView } from "react-intersection-observer";
+import { FaTimes } from "react-icons/fa";
+
+type GalleryItem = {
+  category: string;
+  image: string;
+};
 
 const GallerySection = () => {
   const [ref, inView] = useInView({
@@ -10,64 +15,67 @@ const GallerySection = () => {
     threshold: 0.1,
   });
 
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
 
   // Categories
   const categories = [
-    { id: 'all', name: 'All Projects' },
-    { id: 'scaffolding', name: 'Scaffolding Systems' },
-    { id: 'acrospan', name: 'Acro Spans' },
-    { id: 'centeredsheets', name: 'Centered Sheets' },
-    { id: 'clamps', name: 'Clamps' },
-    { id: 'galvanizedplanks', name: 'Metal Planks' },
-    { id: 'jackpipes', name: 'Jack Pipes' },
+    { id: "all", name: "All Projects" },
+    { id: "scaffolding", name: "Scaffolding Systems" },
+    { id: "acrospan", name: "Acro Spans" },
+    { id: "centeredsheets", name: "Centered Sheets" },
+    { id: "clamps", name: "Clamps" },
+    { id: "galvanizedplanks", name: "Metal Planks" },
+    { id: "jackpipes", name: "Jack Pipes" },
   ];
 
   // Gallery Items - ALL IMAGES FROM YOUR FOLDERS
   const galleryItems = [
     // Scaffolding
-    { category: 'scaffolding', image: '/gallery/scaffolding/i1.png' },
-    { category: 'scaffolding', image: '/gallery/scaffolding/i2.png' },
-    { category: 'scaffolding', image: '/gallery/scaffolding/i3.png' },
-    { category: 'scaffolding', image: '/gallery/scaffolding/i4.png' },
-    { category: 'scaffolding', image: '/gallery/scaffolding/i5.png' },
-    { category: 'scaffolding', image: '/gallery/scaffolding/i6.png' },
-    { category: 'scaffolding', image: '/gallery/scaffolding/i7.png' },
-    { category: 'scaffolding', image: '/gallery/scaffolding/i8.png' },
-    { category: 'scaffolding', image: '/gallery/scaffolding/i9.png' },
-    { category: 'scaffolding', image: '/gallery/scaffolding/i10.png' },
+    { category: "scaffolding", image: "/gallery/scaffolding/i1.png" },
+    { category: "scaffolding", image: "/gallery/scaffolding/i2.png" },
+    { category: "scaffolding", image: "/gallery/scaffolding/i3.png" },
+    { category: "scaffolding", image: "/gallery/scaffolding/i4.png" },
+    { category: "scaffolding", image: "/gallery/scaffolding/i5.png" },
+    { category: "scaffolding", image: "/gallery/scaffolding/i6.png" },
+    { category: "scaffolding", image: "/gallery/scaffolding/i7.png" },
+    { category: "scaffolding", image: "/gallery/scaffolding/i8.png" },
+    { category: "scaffolding", image: "/gallery/scaffolding/i9.png" },
+    { category: "scaffolding", image: "/gallery/scaffolding/i10.png" },
 
     // Acrospan
-    { category: 'acrospan', image: '/gallery/acrospan/i1.png' },
-    { category: 'acrospan', image: '/gallery/acrospan/i2.png' },
-    { category: 'acrospan', image: '/gallery/acrospan/i3.png' },
-    { category: 'acrospan', image: '/gallery/acrospan/i4.png' },
+    { category: "acrospan", image: "/gallery/acrospan/i1.png" },
+    { category: "acrospan", image: "/gallery/acrospan/i2.png" },
+    { category: "acrospan", image: "/gallery/acrospan/i3.png" },
+    { category: "acrospan", image: "/gallery/acrospan/i4.png" },
 
     // Centered Sheets
-    { category: 'centeredsheets', image: '/gallery/centeredsheets/i1.png' },
-    { category: 'centeredsheets', image: '/gallery/centeredsheets/i2.png' },
-    { category: 'centeredsheets', image: '/gallery/centeredsheets/i3.png' },
+    { category: "centeredsheets", image: "/gallery/centeredsheets/i1.png" },
+    { category: "centeredsheets", image: "/gallery/centeredsheets/i2.png" },
+    { category: "centeredsheets", image: "/gallery/centeredsheets/i3.png" },
 
     // Clamps
-    { category: 'clamps', image: '/gallery/clamps/i1.png' },
+    { category: "clamps", image: "/gallery/clamps/i1.png" },
 
     // Galvanized Planks
-    { category: 'galvanizedplanks', image: '/gallery/galvanizedplanks/i1.png' },
-    { category: 'galvanizedplanks', image: '/gallery/galvanizedplanks/i2.png' },
+    { category: "galvanizedplanks", image: "/gallery/galvanizedplanks/i1.png" },
+    { category: "galvanizedplanks", image: "/gallery/galvanizedplanks/i2.png" },
 
     // Jack Pipes
-    { category: 'jackpipes', image: '/gallery/jackpipes/i1.png' },
-    { category: 'jackpipes', image: '/gallery/jackpipes/i2.png' },
+    { category: "jackpipes", image: "/gallery/jackpipes/i1.png" },
+    { category: "jackpipes", image: "/gallery/jackpipes/i2.png" },
   ];
 
   const filteredItems =
-    selectedCategory === 'all'
+    selectedCategory === "all"
       ? galleryItems
       : galleryItems.filter((item) => item.category === selectedCategory);
 
   return (
-    <section id="gallery" className="py-16 bg-gradient-to-br from-gray-50 to-white">
+    <section
+      id="gallery"
+      className="py-16 bg-gradient-to-br from-gray-50 to-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -85,8 +93,8 @@ const GallerySection = () => {
               onClick={() => setSelectedCategory(category.id)}
               className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
                 selectedCategory === category.id
-                  ? 'bg-[#F36A2D] text-white shadow-md'
-                  : 'bg-white text-[#555555] border border-gray-300 hover:border-[#F36A2D] hover:text-[#F36A2D]'
+                  ? "bg-[#F36A2D] text-white shadow-md"
+                  : "bg-white text-[#555555] border border-gray-300 hover:border-[#F36A2D] hover:text-[#F36A2D]"
               }`}
             >
               {category.name}
@@ -103,7 +111,7 @@ const GallerySection = () => {
             <div
               key={index}
               className={`group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:scale-105 ${
-                inView ? 'animate-fade-scale' : 'opacity-0'
+                inView ? "animate-fade-scale" : "opacity-0"
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => setSelectedImage(item)}

@@ -45,7 +45,6 @@ const MapEmbed: React.FC<MapEmbedProps> = ({
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.849909561387!2d78.4984472!3d17.4189891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb998cc239cbc7%3A0xeea88c22ca8156e8!2sAk%20scaffolding!5e0!3m2!1sen!2sin!4v1756024403240!5m2!1sen!2sin"
             className="absolute inset-0 w-full h-full"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
 
