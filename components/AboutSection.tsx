@@ -55,22 +55,12 @@ const AboutSection = () => {
             </p>
             
             <p className="text-lg text-gray-400 leading-relaxed mb-12">
-              With over 15 years of experience in the industry, we have built a reputation for excellence, 
+              With over 20 years of experience in the industry, we have built a reputation for excellence, 
               reliability, and unwavering commitment to safety standards. Our team of experts ensures that 
               every project receives the highest quality materials and professional service.
             </p>
 
-            {/* Company Stats */}
-            <div className="grid grid-cols-2 gap-8">
-              <div className="text-center">
-                <h3 className="text-4xl font-bold text-[#F36A2D] mb-2">500+</h3>
-                <p className="text-gray-300">Successful Projects</p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-4xl font-bold text-[#F36A2D] mb-2">15+</h3>
-                <p className="text-gray-300">Years Experience</p>
-              </div>
-            </div>
+         
           </div>
 
           {/* Image Collage */}
@@ -80,13 +70,13 @@ const AboutSection = () => {
                 <div 
                   className="h-48 bg-cover bg-center rounded-lg transform rotate-2 hover:rotate-0 transition-transform duration-300"
                   style={{
-                    backgroundImage: 'url(https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=800)',
+                    backgroundImage: 'url(/scafolding/about1.png)',
                   }}
                 ></div>
                 <div 
                   className="h-32 bg-cover bg-center rounded-lg transform -rotate-1 hover:rotate-0 transition-transform duration-300"
                   style={{
-                    backgroundImage: 'url(https://images.pexels.com/photos/1426825/pexels-photo-1426825.jpeg?auto=compress&cs=tinysrgb&w=800)',
+                    backgroundImage: 'url(/scafolding/about2.png)',
                   }}
                 ></div>
               </div>
@@ -94,13 +84,13 @@ const AboutSection = () => {
                 <div 
                   className="h-32 bg-cover bg-center rounded-lg transform rotate-1 hover:rotate-0 transition-transform duration-300"
                   style={{
-                    backgroundImage: 'url(https://images.pexels.com/photos/273230/pexels-photo-273230.jpeg?auto=compress&cs=tinysrgb&w=800)',
+                    backgroundImage: 'url(/scafolding/about3.png)',
                   }}
                 ></div>
                 <div 
                   className="h-48 bg-cover bg-center rounded-lg transform -rotate-2 hover:rotate-0 transition-transform duration-300"
                   style={{
-                    backgroundImage: 'url(https://images.pexels.com/photos/162539/architecture-building-amsterdam-blue-sky-162539.jpeg?auto=compress&cs=tinysrgb&w=800)',
+                    backgroundImage: 'url(/scafolding/about4.png)',
                   }}
                 ></div>
               </div>

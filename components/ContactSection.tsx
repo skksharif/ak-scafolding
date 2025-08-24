@@ -1,8 +1,14 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-import { FaPhone, FaMapMarkerAlt, FaEnvelope, FaClock, FaPaperPlane } from 'react-icons/fa';
+import { useState } from "react";
+import { useInView } from "react-intersection-observer";
+import {
+  FaPhone,
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaClock,
+  FaPaperPlane,
+} from "react-icons/fa";
 
 const ContactSection = () => {
   const [ref, inView] = useInView({
@@ -11,81 +17,65 @@ const ContactSection = () => {
   });
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e:any) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-    });
-    setIsSubmitting(false);
+
+    // Create a mailto link with subject & body
+    const mailtoLink = `mailto:akscaffolding.hyd@gmail.com
+    ?subject=${encodeURIComponent(formData.subject || "Scaffolding Inquiry")}
+    &body=${encodeURIComponent(
+      `Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email}
+
+Message:
+${formData.message}`
+    )}`;
+
+    // Redirect to default email client
+    window.location.href = mailtoLink;
   };
 
   const contactInfo = [
     {
       icon: FaMapMarkerAlt,
-      title: 'Our Location',
+      title: "Our Location",
       details: [
-        '1-4-523/1, Beside Line United Weight Bridge,',
-        'Near Badi Masjid, Bholakpur, Musheerabad,',
-        'Hyderabad – 500020, T.S.'
+        "1-4-523/1, Beside Line United Weight Bridge,",
+        "Near Badi Masjid, Bholakpur, Musheerabad,",
+        "Hyderabad – 500020, T.S.",
       ],
     },
-    {
-      icon: FaPhone,
-      title: 'Phone Numbers',
-      details: [
-        '9989934599',
-        '9849191571',
-        '9666164797',
-        '8712311571'
-      ],
-    },
+
     {
       icon: FaEnvelope,
-      title: 'Email Us',
-      details: [
-       
-        'contact@akscaffolding.com'
-      ],
-    },
-    {
-      icon: FaClock,
-      title: 'Business Hours',
-      details: [
-        'Monday - Saturday: 8:00 AM - 7:00 PM',
-        'Sunday: 9:00 AM - 5:00 PM'
-      ],
+      title: "Email Us",
+      details: ["akscaffolding.hyd@gmail.com"],
     },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-[#1A2A52] via-[#15213E] to-[#1A2A52]">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-br from-[#1A2A52] via-[#15213E] to-[#1A2A52]"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -94,22 +84,28 @@ const ContactSection = () => {
           </h2>
           <div className="w-24 h-1 bg-[#F36A2D] mx-auto mb-6"></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Looking for the best scaffolding in Hyderabad? Contact AK Scaffolding today for premium scaffolding solutions.
+            Looking for the best scaffolding in Hyderabad? Contact AK
+            Scaffolding today for premium scaffolding solutions.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Information */}
-          <div ref={ref} className={`space-y-8 ${inView ? 'animate-slide-up' : 'opacity-0'}`}>
-            <h3 className="text-2xl font-bold text-white mb-8">Contact Information</h3>
-            
+          <div
+            ref={ref}
+            className={`space-y-8 ${inView ? "animate-slide-up" : "opacity-0"}`}
+          >
+            <h3 className="text-2xl font-bold text-white mb-8">
+              Contact Information
+            </h3>
+
             {contactInfo.map((info, index) => {
               const IconComponent = info.icon;
               return (
                 <div
                   key={index}
                   className={`flex items-start space-x-4 p-6 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-all duration-300 ${
-                    inView ? 'animate-fade-scale' : 'opacity-0'
+                    inView ? "animate-fade-scale" : "opacity-0"
                   }`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
@@ -117,9 +113,14 @@ const ContactSection = () => {
                     <IconComponent className="text-white text-xl" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-2">{info.title}</h4>
+                    <h4 className="text-lg font-semibold text-white mb-2">
+                      {info.title}
+                    </h4>
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-gray-300 text-sm leading-relaxed">
+                      <p
+                        key={idx}
+                        className="text-gray-300 text-sm leading-relaxed"
+                      >
                         {detail}
                       </p>
                     ))}
@@ -130,7 +131,9 @@ const ContactSection = () => {
 
             {/* Emergency Contact */}
             <div className="bg-[#F36A2D] p-6 rounded-lg">
-              <h4 className="text-white font-bold text-lg mb-2">24/7 Emergency Service</h4>
+              <h4 className="text-white font-bold text-lg mb-2">
+                24/7 Emergency Service
+              </h4>
               <p className="text-white/90 text-sm mb-3">
                 For urgent scaffolding requirements, call our emergency hotline:
               </p>
@@ -138,20 +141,28 @@ const ContactSection = () => {
                 href="tel:9989934599"
                 className="text-white font-bold text-xl hover:underline"
               >
-                9989934599
+                +91 97058 99998
               </a>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className={`${inView ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
+          <div
+            className={`${inView ? "animate-slide-up" : "opacity-0"}`}
+            style={{ animationDelay: "0.3s" }}
+          >
             <div className="bg-white rounded-2xl shadow-2xl p-8">
-              <h3 className="text-2xl font-bold text-[#1A2A52] mb-8">Send us a Message</h3>
-              
+              <h3 className="text-2xl font-bold text-[#1A2A52] mb-8">
+                Send us a Message
+              </h3>
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-semibold text-gray-700 mb-2"
+                    >
                       Full Name *
                     </label>
                     <input
@@ -165,9 +176,12 @@ const ContactSection = () => {
                       placeholder="Enter your name"
                     />
                   </div>
-                  
+
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-semibold text-gray-700 mb-2"
+                    >
                       Phone Number *
                     </label>
                     <input
@@ -184,7 +198,10 @@ const ContactSection = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
+                  >
                     Email Address
                   </label>
                   <input
@@ -199,7 +216,10 @@ const ContactSection = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
+                  >
                     Subject *
                   </label>
                   <select
@@ -220,7 +240,10 @@ const ContactSection = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
+                  >
                     Message *
                   </label>
                   <textarea

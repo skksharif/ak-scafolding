@@ -33,7 +33,7 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <FaHardHat className="text-[#F36A2D] text-3xl" />
+                        <img src="/logo.png" alt="logo" className='w-[70px] bg-white p-1 rounded-sm' />
                 <div>
                   <h3 className="text-2xl font-bold">AK SCAFFOLDING</h3>
                   <p className="text-gray-400 text-sm">Steel. Strength. Safety.</p>
@@ -79,15 +79,7 @@ const Footer = () => {
                 ))}
               </ul>
 
-              <div className="mt-8">
-                <h5 className="font-semibold mb-3 text-white">Our Services</h5>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li>Cuplock Systems</li>
-                  <li>Acro Spans</li>
-                  <li>Centering Sheets</li>
-                  <li>Metal Planks</li>
-                </ul>
-              </div>
+           
             </div>
 
             {/* Contact Info */}
@@ -105,19 +97,12 @@ const Footer = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-3">
-                  <FaPhone className="text-[#F36A2D]" />
-                  <div className="text-sm text-gray-300">
-                    <p>9989934599 | 9849191571</p>
-                    <p>9666164797 | 8712311571</p>
-                  </div>
-                </div>
+        
 
                 <div className="flex items-center space-x-3">
                   <FaEnvelope className="text-[#F36A2D]" />
                   <div className="text-sm text-gray-300">
-                    <p>info@akscaffolding.com</p>
-                    <p>contact@akscaffolding.com</p>
+                    <p>akscaffolding.hyd@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -125,8 +110,8 @@ const Footer = () => {
               {/* Emergency Contact */}
               <div className="mt-6 p-4 bg-[#F36A2D]/20 rounded-lg border border-[#F36A2D]/30">
                 <h5 className="font-semibold text-[#F36A2D] mb-2">24/7 Emergency</h5>
-                <a href="tel:9989934599" className="text-white font-semibold text-lg hover:underline">
-                  9989934599
+                <a href="tel:9705899998" className="text-white font-semibold text-lg hover:underline">
+                                    +91 97058 99998
                 </a>
               </div>
             </div>
