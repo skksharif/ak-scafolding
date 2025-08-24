@@ -33,7 +33,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <FaHardHat className="text-[#F36A2D] text-3xl" />
+            <img src="/logo.png" alt="logo" className='w-[55px]' />
             <div>
               <h1 className="text-white font-bold text-xl">AK SCAFFOLDING</h1>
               <p className="text-gray-300 text-xs">Steel. Strength. Safety.</p>

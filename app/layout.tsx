@@ -6,13 +6,21 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Best Scaffolding in Hyderabad | AK Scaffolding',
-  description: 'AK Scaffolding – Hyderabad\'s trusted scaffolding supplier. Offering cuplock systems, acro spans, jack pipes, centering sheets, clamps & galvanized planks with safety and strength.',
-  keywords: 'Best Scaffolding in Hyderabad, Scaffolding Suppliers in Hyderabad, Scaffolding Rentals Hyderabad, Scaffolding Cuplock Systems Hyderabad, Scaffolding Materials Hyderabad',
+  description:
+    "AK Scaffolding – Hyderabad's trusted scaffolding supplier. Offering cuplock systems, acro spans, jack pipes, centering sheets, clamps & galvanized planks with safety and strength.",
+  keywords:
+    'Best Scaffolding in Hyderabad, Scaffolding Suppliers in Hyderabad, Scaffolding Rentals Hyderabad, Scaffolding Cuplock Systems Hyderabad, Scaffolding Materials Hyderabad',
   openGraph: {
     title: 'Best Scaffolding in Hyderabad | AK Scaffolding',
-    description: 'Hyderabad\'s trusted scaffolding supplier with premium quality materials',
+    description:
+      "Hyderabad's trusted scaffolding supplier with premium quality materials",
     type: 'website',
-  }
+  },
+  icons: {
+    icon: '/logo.png', // path to your favicon in /public folder
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({
