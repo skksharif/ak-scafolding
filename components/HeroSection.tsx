@@ -13,7 +13,7 @@ const HeroSection = () => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, []);
 
   return (
     <section
@@ -38,7 +38,7 @@ const HeroSection = () => {
           />
         ))}
 
-        {/* Gradient Overlay (changed to dark cream shades) */}
+        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#000]/50 via-black/50 to-[#000]/50" />
 
         {/* Pattern Overlay */}
@@ -48,9 +48,17 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative mt-[50px] z-10 max-w-7xl mx-auto px-4 sm:mt-0 px-6 lg:px-8 text-center">
         <div className="animate-fade-scale">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-4 leading-tight">
             Best Scaffolding in <span className="gradient-text">Hyderabad</span>
           </h1>
+
+          {/* Added Name */}
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-6 font-semibold">
+            By
+            <span className="inline-block px-2 py-2 text-white text-lg sm:text-xl lg:text-2xl font-semibold drop-shadow-[0_0_30px_#F36A2D]">
+              Sk. Javeed Ali
+            </span>
+          </p>
 
           <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed">
             "The Best Scaffolding in Hyderabad – Structure Built Strong, Safety
@@ -61,7 +69,7 @@ const HeroSection = () => {
             <a
               href={`https://wa.me/+919705899998`}
               target="_blank"
-              className="group bg-[#F36A2D] hover:bg-[#E85C24] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-105  flex items-center space-x-3"
+              className="group bg-[#F36A2D] hover:bg-[#E85C24] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-105 flex items-center space-x-3"
             >
               <span>Request a Quote</span>
               <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
