@@ -58,6 +58,13 @@ const ServicesSection = () => {
         "Adjustable supports for perfect balance & structural strength.",
       delay: 1.2,
     },
+    {
+      image: "/services/columnbox.webp",
+      title: "Column Box",
+      description:
+        "Robust formwork solutions for precise column shaping and support.",
+      delay: 1.4,
+    }
   ];
 
   return (

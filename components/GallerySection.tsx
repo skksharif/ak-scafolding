@@ -27,9 +27,8 @@ const GallerySection = () => {
     { id: "clamps", name: "Clamps" },
     { id: "galvanizedplanks", name: "Metal Planks" },
     { id: "jackpipes", name: "Jack Pipes" },
-
+    { id: "columnbox", name: "Column Box" },
   ];
-
 
   // Gallery Items - ALL IMAGES FROM YOUR FOLDERS
   const galleryItems = [
@@ -66,6 +65,15 @@ const GallerySection = () => {
     // Jack Pipes
     { category: "jackpipes", image: "/gallery/jackpipes/i1.png" },
     { category: "jackpipes", image: "/gallery/jackpipes/i2.png" },
+
+    // Column Box
+    { category: "columnbox", image: "/gallery/columnbox/i1.jpg" },
+    { category: "columnbox", image: "/gallery/columnbox/i2.jpg" },
+    { category: "columnbox", image: "/gallery/columnbox/i3.jpg" },
+    { category: "columnbox", image: "/gallery/columnbox/i4.jpg" },
+    { category: "columnbox", image: "/gallery/columnbox/i5.jpg" },
+    { category: "columnbox", image: "/gallery/columnbox/i6.jpg" },
+    { category: "columnbox", image: "/gallery/columnbox/i7.jpg" },
 
     // Add more items as needed
     { category: "other", image: "/gallery/other/i2.jpg" },
