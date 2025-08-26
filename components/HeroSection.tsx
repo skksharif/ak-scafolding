@@ -53,9 +53,9 @@ const HeroSection = () => {
           </h1>
 
           {/* Added Name */}
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-6 font-semibold">
+          <p className="text-lg sm:text-xl lg:text-3xl text-gray-300 mb-3 font-bold">
             By
-            <span className="inline-block px-2 py-2 text-white text-lg sm:text-xl lg:text-2xl font-semibold drop-shadow-[0_0_30px_#F36A2D]">
+            <span className="inline-block px-2 py-2 text-white font-semibold drop-shadow-[0_0px_5px_#F36A2D]">
               Sk. Javeed Ali
             </span>
           </p>

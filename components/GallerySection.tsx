@@ -38,11 +38,6 @@ const GallerySection = () => {
     { category: "scaffolding", image: "/gallery/scaffolding/i3.png" },
     { category: "scaffolding", image: "/gallery/scaffolding/i4.png" },
     { category: "scaffolding", image: "/gallery/scaffolding/i5.png" },
-    { category: "scaffolding", image: "/gallery/scaffolding/i6.png" },
-    { category: "scaffolding", image: "/gallery/scaffolding/i7.png" },
-    { category: "scaffolding", image: "/gallery/scaffolding/i8.png" },
-    { category: "scaffolding", image: "/gallery/scaffolding/i9.png" },
-    { category: "scaffolding", image: "/gallery/scaffolding/i10.png" },
 
     // Acrospan
     { category: "acrospan", image: "/gallery/acrospan/i1.png" },
@@ -56,7 +51,15 @@ const GallerySection = () => {
     { category: "centeredsheets", image: "/gallery/centeredsheets/i3.png" },
 
     // Clamps
-    { category: "clamps", image: "/gallery/clamps/i1.png" },
+    { category: "clamps", image: "/gallery/clamps/i1.jpg" },
+    { category: "clamps", image: "/gallery/clamps/i2.jpg" },
+    { category: "clamps", image: "/gallery/clamps/i3.jpg" },
+    { category: "clamps", image: "/gallery/clamps/i4.jpg" },
+    { category: "clamps", image: "/gallery/clamps/i5.jpg" },
+    { category: "clamps", image: "/gallery/clamps/i6.jpg" },
+    { category: "clamps", image: "/gallery/clamps/i7.jpg" },
+    { category: "clamps", image: "/gallery/clamps/i8.jpg" },
+    { category: "clamps", image: "/gallery/clamps/i9.jpg" },
 
     // Galvanized Planks
     { category: "galvanizedplanks", image: "/gallery/galvanizedplanks/i1.png" },
