@@ -1,3 +1,4 @@
+// app/layout.tsx
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -15,11 +16,24 @@ export const metadata: Metadata = {
     description:
       "Hyderabad's trusted scaffolding supplier with premium quality materials",
     type: 'website',
+    url: 'https://www.akscaffolding.com',
+    images: [
+      {
+        url: '/logo.png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Scaffolding in Hyderabad | AK Scaffolding',
+    description:
+      "Hyderabad's trusted scaffolding supplier with premium quality materials",
+    images: ['/logo.png'],
   },
   icons: {
-    icon: '/logo.png', // path to your favicon in /public folder
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
   },
 };
 
